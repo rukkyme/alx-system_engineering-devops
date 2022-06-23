@@ -1,1 +1,1 @@
-string to change directory to home directory
+my fourth rask readme
