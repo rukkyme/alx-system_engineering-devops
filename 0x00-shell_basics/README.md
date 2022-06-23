@@ -1,1 +1,1 @@
-My shekll basics readme
+string to change directory to home directory
