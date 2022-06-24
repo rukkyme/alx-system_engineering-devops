@@ -1,1 +1,1 @@
-string to display current directory content, including hidden files
+this is the welcome readme
