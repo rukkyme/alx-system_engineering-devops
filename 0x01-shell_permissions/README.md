@@ -1,1 +1,1 @@
-my mirror task readme
+the directories task readme
