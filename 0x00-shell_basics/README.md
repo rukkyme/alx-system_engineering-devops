@@ -1,1 +1,1 @@
-this is the welcome readme
+betty in the directory readme
