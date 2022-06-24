@@ -1,1 +1,1 @@
-betty in the directory readme
+this is the first delete readme
