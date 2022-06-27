@@ -1,1 +1,1 @@
-script used to print Hello world
+My Hello world readme
