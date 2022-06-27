@@ -1,1 +1,1 @@
-My Hello world readme
+script to print confused smiley readme
