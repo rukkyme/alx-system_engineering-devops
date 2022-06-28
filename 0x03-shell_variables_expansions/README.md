@@ -1,1 +1,1 @@
-creating local variable
+creates new gloval variable
