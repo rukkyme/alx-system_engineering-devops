@@ -1,1 +1,1 @@
-removing all c's from input read me
+for reverse read me
