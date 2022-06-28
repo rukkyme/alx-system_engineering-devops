@@ -1,1 +1,1 @@
-duplicatin the last line read me
+deleting all regular file read me
