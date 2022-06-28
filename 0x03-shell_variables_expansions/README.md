@@ -1,1 +1,1 @@
-counting the numbers of directories in path readme
+listing environment variables
