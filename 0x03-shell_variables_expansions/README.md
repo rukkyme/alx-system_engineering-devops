@@ -1,1 +1,1 @@
-print result of divided power
+prints result of breath with love
