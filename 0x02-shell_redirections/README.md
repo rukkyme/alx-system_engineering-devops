@@ -1,1 +1,1 @@
-search for empty file and directories read me
+list all files with .gif extension in current and its sub directories
