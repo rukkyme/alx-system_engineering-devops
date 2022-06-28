@@ -1,1 +1,1 @@
-printing hello user read me
+creating the last directory the shell sees read me
