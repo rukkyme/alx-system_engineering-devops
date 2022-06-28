@@ -1,1 +1,1 @@
-script to print confused smiley readme
+This is the readme for hello world task
