@@ -1,1 +1,1 @@
-creating the last directory the shell sees read me
+counting the numbers of directories in path readme
