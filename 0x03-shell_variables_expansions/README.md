@@ -1,1 +1,1 @@
-listing environment variables
+creating local variable
