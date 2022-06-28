@@ -1,1 +1,1 @@
-counting the word read me
+display of root pattern read me
