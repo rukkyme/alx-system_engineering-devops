@@ -1,1 +1,1 @@
-finding word in file read me
+counting the word read me
