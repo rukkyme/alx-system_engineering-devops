@@ -1,1 +1,1 @@
-deleting all lines without pattern bin read me
+Display the lines of the files read me
