@@ -1,1 +1,1 @@
-display of root pattern read me
+deleting all lines without pattern bin read me
