@@ -1,1 +1,1 @@
-replacing characters read me
+removing all c's from input read me
