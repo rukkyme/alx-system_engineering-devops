@@ -1,1 +1,1 @@
-creates new gloval variable
+Adding to true knowledge
