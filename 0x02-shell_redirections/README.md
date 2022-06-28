@@ -1,1 +1,1 @@
-displaying users and home directories read me
+search for empty file and directories read me
