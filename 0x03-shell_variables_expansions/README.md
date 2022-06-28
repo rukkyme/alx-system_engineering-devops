@@ -1,1 +1,1 @@
-Adding to true knowledge
+print result of divided power
