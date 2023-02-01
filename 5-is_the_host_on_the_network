@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# script to discover if hosts are on the network using ping.
+# the script is to find out if the host is connected using ping
 if [ "$(echo -n "$1" | wc -m)" == "0" ]; then
 	echo 'Usage: 5-is_the_host_on_the_network {IP_ADDRESS}'
 	exit 1
