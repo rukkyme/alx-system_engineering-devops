@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Install and configure HAproxy on your lb-01 server.
+
+# Update system packages and install haproxy
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install haproxy -y
+
+# for configuring HAProxy to forward traffic to web-01 and web-02
+sudo sh -c "echo 'frontend getrukky.tech
+    bind *:80
+    default_backend http_backend
+
+backend http_backend
+    balance roundrobin
+    server web-01 [92102]-web-01:80 check
+    server web-02 [92102]-web-02:80 check' >> /etc/haproxy/haproxy.cfg"
+
+# This will restart HAProxy and ensures it can be managed via init script
+# so it loads and stops automatically with booting
+sudo systemctl restart haproxy
+sudo update-rc.d haproxy defaults
+
