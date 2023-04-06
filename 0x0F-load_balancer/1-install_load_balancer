@@ -16,8 +16,8 @@ frontend http-in
 # Backend configuration distributing traffic 
 backend servers
     balance roundrobin
-    server school 100.27.14.91
-    server server-two  34.232.52.68
+    server 92102-web-01 100.27.14.91
+    server 92102-web-02 34.232.52.68
 " >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
 
