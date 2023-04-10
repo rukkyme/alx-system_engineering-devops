@@ -2,8 +2,8 @@
 # script searches for subdomain and displays information about it
 
 function audit_DNS_info() {
-  local domain=$dom
-  local subdomain=$subdom
+  local domain=$1
+  local subdomain=$2
 
 #statement tests if subdomain is set to null, empty or not
   if [[ -z "$subdomain" ]]; then
@@ -14,10 +14,10 @@ function audit_DNS_info() {
 
 #iterates over the arrays in subdomains
   for sub in "${subdomains[@]}"; do
-    record=$(dig +short $sub.$domain | awk '{print $dom}')
+	  record=$(dig +short $sub.$domain | awk '{print $1}')
     type=$(dig $sub.$domain | awk '/IN/ {print $4}')
     echo "The subdomain $sub is a $type record and points to $record"
   done
 }
 
-audit_DNS_info "$dom" "$subdom"
+audit_DNS_info "$1" "$2"
