@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# script searches for subdomain and displays information about it
 
 function audit_DNS_info() {
   local domain=$dom
