@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function audit_DNS_info() {
   local domain=$dom
