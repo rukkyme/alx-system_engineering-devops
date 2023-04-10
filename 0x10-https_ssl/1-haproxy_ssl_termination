@@ -28,3 +28,14 @@ backend http_back
     balance roundrobin
     server web-01 100.27.14.91 check
 
+#frontend configuration
+frontend http-in
+    bind *:80
+    default_backend servers
+
+# Backend configuration distributing traffic
+backend servers
+    balance roundrobin
+    server 92102-web-01 100.27.14.91
+    server 92102-web-02 34.232.52.68
+
