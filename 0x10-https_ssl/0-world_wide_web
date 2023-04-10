@@ -16,7 +16,7 @@ function audit_DNS_info() {
   for sub in "${subdomains[@]}"; do
 	  record=$(dig +short $sub.$domain | awk '{print $1}')
     type=$(dig $sub.$domain | awk '/IN/ {print $4}')
-    echo "The subdomain $sub is a $type record and points to $record"
+    echo "The subdomain $sub is a $type record and points to $record "
   done
 }
 
