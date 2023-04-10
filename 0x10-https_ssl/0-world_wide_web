@@ -1,0 +1,22 @@
+#!/bin/bash
+
+function audit_DNS_info() {
+  local domain=$dom
+  local subdomain=$subdom
+
+#statement tests if subdomain is empty,set to null or not empty
+  if [[ -z "$subdomain" ]]; then
+    subdomains=("www" "lb-01" "web-01" "web-02")
+  else
+    subdomains=("$subdomain")
+  fi
+
+#iterates over the arrays in subdomains
+  for sub in "${subdomains[@]}"; do
+    record=$(dig +short $sub.$domain | awk '{print $dom}')
+    type=$(dig $sub.$domain | awk '/IN/ {print $4}')
+    echo "The subdomain $sub is a $type record and points to $record"
+  done
+}
+
+audit_DNS_info "$dom" "$subdom"
