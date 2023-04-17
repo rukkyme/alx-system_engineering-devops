@@ -1,0 +1,14 @@
+#installing ufw
+sudo apt-get update
+sudo apt-get install ufw
+
+#Configuring ufw to block all incoming traffic
+sudo ufw default deny incoming
+
+#setting the rules to configuration
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+#enabling ufw 
+sudo ufw enable
+
