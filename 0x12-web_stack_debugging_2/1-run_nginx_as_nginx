@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
-# Updates Nginx configuration to run as nginx user
+# Updates Nginx configuration to run as nginx user and listen to port 8080
 
-sed -i 's/user\s*nginx;/user nginx nginx;/g' /etc/nginx/nginx.conf
-
-# Updates Nginx configuration to listen on all active IPs on port 8080
-sed -i 's/listen\s*80;/listen 8080 default_server;/g' /etc/nginx/sites-available/default
-
-# Restart Nginx 
-service nginx restart
+pkill apache2 && sed -i 's/80/8080/g' /etc/nginx/sites-available/default 
+chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
