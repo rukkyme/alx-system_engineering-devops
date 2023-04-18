@@ -12,4 +12,3 @@ USERNAME="$1"
 
 # Switch to the named user and ask for name
 su -c "whoami" "$USERNAME"
-
