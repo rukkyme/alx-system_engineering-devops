@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # MySQL dump is generated and creates compressed archive
-
 sudo mysqldump -uroot -p"$1" --all-databases --master-data > backup.sql
 file=$(date '+%d-%m-%Y').tar.gz
 if [ -f backup.sql ]; then
