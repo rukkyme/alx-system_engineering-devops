@@ -1,0 +1,9 @@
+# MySQL Replication Configuration for web-02
+
+# Server ID (must be unique among all MySQL servers in the replication topology)
+server-id        = 2
+
+# Enable binary logging for replication
+log_bin          = /var/log/mysql/mysql-bin.log
+binlog_do_db     = tyrell_corp
+relay-log        = /var/log/mysql/mysql-relay-bin.log

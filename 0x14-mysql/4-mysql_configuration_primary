@@ -1,0 +1,21 @@
+# MySQL primary configuration
+
+# Bind address (commented out to allow connections from any IP address)
+# bind-address = 0.0.0.0
+
+# Server ID (unique for each server in the replication setup)
+server-id = 1
+
+# Log bin (enables binary logging for replication)
+log-bin = /var/log/mysql/mysql-bin.log
+
+# Database name
+database = tyrell_corp
+
+# Replication settings
+relay-log = /var/log/mysql/mysql-relay-bin.log
+relay-log-index = /var/log/mysql/mysql-relay-bin.index
+log_slave_updates = 1
+auto_increment_increment = 2
+auto_increment_offset = 1
+
