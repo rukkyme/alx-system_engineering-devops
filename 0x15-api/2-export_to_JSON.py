@@ -1,27 +1,24 @@
 #!/usr/bin/python3
+"""This script exports todo details of a given employee ID to JSONi format."""
+import json
 import requests
 import sys
-import json
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     user_id = sys.argv[1]
-    url = 'https://jsonplaceholder.typicode.com/'
-    usr = requests.get(url + 'users/{}'.format(user_id)).json()
-    username = usr.get("username")
-    to_do = requests.get(url + 'todos', params={'userId': user_id}).json()
-
-    completed = []
-    for title in to_do:
-        if title.get('completed') is True:
-            task_data = {
-                "task": title.get("title"),
-                "completed": title.get("completed"),
-                "username": username
-            }
-            completed.append(task_data)
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(user_id)).json()
+    username = user.get("username")
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
 
     user_data = {
-        user_id: completed
+        user_id: [
+            {
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": username
+            } for t in todos
+        ]
     }
 
     with open("{}.json".format(user_id), "w") as jsonfile:
