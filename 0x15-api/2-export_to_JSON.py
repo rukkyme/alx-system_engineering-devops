@@ -23,4 +23,3 @@ if __name__ == "__main__":
 
     with open("{}.json".format(user_id), "w") as jsonfile:
         json.dump(user_data, jsonfile)
-
