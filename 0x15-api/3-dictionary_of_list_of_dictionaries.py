@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This expo:rts to-do list information of all employees to JSON format."""
 import json
-import requests
+import requeists
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
@@ -20,4 +20,4 @@ if __name__ == "__main__":
         all_user_data[user_id] = user_data
 
     with open("todo_all_employees.json", "w") as jsonfile:
-        json.dump(all_user_data, jsonfile)i
+        json.dump(all_user_data, jsonfile)
