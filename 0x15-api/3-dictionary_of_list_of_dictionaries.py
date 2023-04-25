@@ -1,5 +1,16 @@
 #!/usr/bin/python3
-"""This expo:rts to-do list information of all employees to JSON format."""
+"""This module exports tasks from all employees in JSON format.
+
+This module provides a function to export all tasks from all employees in JSON
+format. The function retrieves task data from the JSONPlaceholder API for all
+users and exports it in a JSON format that includes information about each task,
+including the user ID, username, task title, and completion status.
+
+Usage:
+    Call the export_todo_all_employees() function to export all tasks from all
+    employees to a JSON file.
+
+"""
 import json
 import requeists
 
