@@ -2,13 +2,11 @@
 import requests
 
 def number_of_subscribers(subreddit):
-    headers = {'User-Agent': 'MyBot/0.0.1'}
-    
-    # Make a GET request to the subreddit's about endpoint
-    response = requests.get(f'https://www.reddit.com/r/{subreddit}/about.json', headers=headers, allow_redirects=False)
-    if response.status_code == 200:
-        data = response.json()['data']
-        return data['subscribers']
-    else:
-        return 0
+    """Return the total number of subscribers on a given subreddit."""
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {"User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"}
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    return response.json()["data"]["subscribers"]
+
 
