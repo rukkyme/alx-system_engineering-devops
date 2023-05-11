@@ -10,14 +10,19 @@
     """
 import requests
 
-def number_of_subscribers(subreddit):
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": "MyBot/0.0.1"}
-    response = requests.get(url, headers=headers, allow_redirects=False)
 
-    if response.status_code == 200:
-        data = response.json().get("data")
-        return data.get("subscribers")
+def number_of_subscribers(subreddit: str) -> int:
+    """Return the total number of subscribers on a given subreddit."""
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {
+        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
+    }
+    response = requests.get(url, headers=headers)
+
+    if response.ok:
+        data = response.json()["data"]
+        return data["subscribers"]
     else:
-        return 0
+        response.raise_for_status()
+
 
