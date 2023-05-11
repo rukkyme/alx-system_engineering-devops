@@ -1,16 +1,11 @@
-class your_module::fix_wp_settings(
-  String $file_path = '/var/www/html/wp-settings.php'
-) {
-  file { $file_path:
-    content => template('your_module/wp-settings.php.erb')
-  }
+# fixing a bug using puppet
 
-  exec { 'fix the php extension issue':
-    command => "sed -i 's/phpp/php/g' ${file_path}",
-    path    => '/usr/local/bin/:/bin/',
-    refreshonly => true,
-  }
+$fix_php_extension_issue = {
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => ['/usr/local/bin', '/bin'],
 }
 
-include your_module::fix_wp_settings
+exec { 'fix the php extension issue':
+  * => $fix_php_extension_issue,
+}
 
